@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="'utf-8" />
+  </head>
+  <body>
+    <div class="result"></div>
+    <script>
+      // obtain text from sample.json (-> async, await)
+      async function showJsonText() {
+        const response = await fetch(
+          "http://127.0.0.1:3000/03_JavaScript_beginner/ch15/sample.json"
+        );
+        // json data to "result" variable
+        const json = await response.json();
+        // "result" to display
+        const resultBox = document.querySelector(".result");
+        resultBox.textContent = json.text;
+      }
+      showJsonText();
+    </script>
+  </body>
+</html>
